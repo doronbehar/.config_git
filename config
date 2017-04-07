@@ -5,7 +5,6 @@
 	editor = nvim
 	pager = less -r
 	whitespace = -space-before-tab,-indent-with-non-tab,-blank-at-eol,-blank-at-eof
-	excludesfile = ~/.config/git/global-ignore
 [credential]
 	helper = cache --timeout=300
 	username = doron.behar
