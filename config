@@ -25,6 +25,7 @@
 	tool = vimdiff3
 	conflictstyle = diff3
 	stat = true
+	summary = true
 [alias]
 	d = difftool
 	l = log --decorate --graph
