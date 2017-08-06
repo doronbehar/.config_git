@@ -43,6 +43,8 @@
 	diffc = diff --cached
 	dc = difftool --cached
 	rst = reset
+	lab = repo lab
+	hub = repo hub
 [pager]
 	stash = false
 [push]
