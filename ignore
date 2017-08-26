@@ -45,3 +45,7 @@ cscope.po.out
 *.orig
 
 # End of https://www.gitignore.io/api/git
+
+
+### Ignore all the README files created by pandoc for viewing offline documentation ###
+README.html
