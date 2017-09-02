@@ -71,5 +71,6 @@
 [apply]
 	ignorewhitespace = change
 	whitespace = fix
-[commit]
-	template = template.gitcommit
+# Local configuration:
+[include]
+	path = ~/.gitconfig
