@@ -71,3 +71,5 @@
 [apply]
 	ignorewhitespace = change
 	whitespace = fix
+[commit]
+	template = template.gitcommit
