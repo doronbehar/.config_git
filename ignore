@@ -49,11 +49,3 @@ cscope.po.out
 
 ### Ignore all the README files created by pandoc for viewing offline documentation ###
 README.html
-
-### Ignore all files generated when building an aur package ###
-src
-pkg
-*.tar.xz
-*.tar.gz
-*.log
-.psci_modules
