@@ -15,16 +15,16 @@
 	username = doronbehar
 [credential "https://gitlab.com"]
 	username = doronbehar
+[difftool "nvimdiff"]
+	cmd = nvim -d "$MERGED" "$LOCAL"
 [diff]
-	tool = vimdiff3
+	tool = nvimdiff
 	mnemonicprefix = true
 	submodule = log
-[difftool]
-	prompt = true
-[difftool "vimdiff3"]
-	cmd = nvim -d "$MERGED" "$LOCAL"
+[mergetool "nvimdiff"]
+	cmd = nvim -d -O \"$BASE\" \"$REMOTE\" \"$LOCAL\" \"$MERGED\"
 [merge]
-	tool = vimdiff3
+	tool = nvimdiff
 	conflictstyle = diff3
 	stat = true
 	summary = true
@@ -51,8 +51,6 @@
 	stash = false
 [push]
 	default = simple
-[mergetool "vimdiff3"]
-	cmd = nvim -d -O \"$BASE\" \"$REMOTE\" \"$LOCAL\" \"$MERGED\"
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
 [url "ssh://git@github.com/"]
