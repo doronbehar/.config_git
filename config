@@ -43,6 +43,7 @@
 	m = mergetool
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	grog = log --graph --abbrev-commit --decorate --all \n--format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
+	logg = "!f() { git --no-pager log --graph --decorate $@ --color=always | env LESS='' less -R -S;}; f"
 	commend = commit --amend --no-edit
 	shorty = status --short --branch
 	cof = checkout -p
