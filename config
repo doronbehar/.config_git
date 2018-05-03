@@ -53,6 +53,7 @@
 	lab = repo lab
 	hub = repo hub
 	fwd = "!f() { git log --reverse --pretty=%H ${1:-master} | grep -A 1 $(git rev-parse HEAD) | tail -n1 | xargs git checkout;}; f"
+	ignore = "!f() { curl -L -s https://www.gitignore.io/api/$@; }; f"
 	prev = checkout HEAD~1
 	wdiff = diff --word-diff
 [pager]
