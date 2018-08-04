@@ -16,6 +16,8 @@ tags
 
 # End of https://www.gitignore.io/api/vim
 
+tags-ja
+
 # Created by https://www.gitignore.io/api/tags
 
 ### Tags ###
@@ -31,11 +33,29 @@ GTAGS
 GRTAGS
 GPATH
 GSYMS
-cscope.files
-cscope.out
-cscope.in.out
-cscope.po.out
 
+### Code Query
+
+c_family.db
+java_family.db
+ruby_family.db
+python_family.db
+javascript_family.db
+c_tags
+java_tags
+ruby_tags
+python_tags
+javascript_tags
+c_cscope.files
+java_cscope.files
+ruby_cscope.files
+python_cscope.files
+javascript_cscope.files
+c_cscope.out
+java_cscope.out
+ruby_cscope.out
+python_cscope.out
+javascript_cscope.out
 
 # End of https://www.gitignore.io/api/tags
 
@@ -49,3 +69,6 @@ cscope.po.out
 
 ### Ignore all the README files created by pandoc for viewing offline documentation ###
 README.html
+
+### Ignore YouCompleteMe compile commands created by cmake and other generators ###
+compile_commands.json
