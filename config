@@ -2,7 +2,7 @@
 	email = doron.behar@gmail.com
 	name = Doron Behar
 [core]
-	editor = nvim
+	editor = 
 	pager = less -r
 	whitespace = -space-before-tab,-indent-with-non-tab,-blank-at-eol,-blank-at-eof
 	precomposeunicode = true
