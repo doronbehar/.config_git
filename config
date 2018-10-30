@@ -2,7 +2,7 @@
 	email = doron.behar@gmail.com
 	name = Doron Behar
 [core]
-	editor = 
+	editor =
 	pager = less -r
 	whitespace = -space-before-tab,-indent-with-non-tab,-blank-at-eol,-blank-at-eof
 	precomposeunicode = true
@@ -67,9 +67,9 @@
 [url "ssh://git@github.com/"]
 	insteadOf = "gh:"
 [url "https://aur.archlinux.org/"]
-    insteadOf = "aur:"
+	insteadOf = "aur:"
 [url "ssh+git://aur4.archlinux.org/"]
-    pushInsteadOf = "aur:"
+	pushInsteadOf = "aur:"
 [url "ssh://git@bitbucket.org/"]
 	insteadOf = https://bitbucket.org/
 [url "ssh://git@bitbucket.org/"]
