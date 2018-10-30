@@ -33,29 +33,36 @@
 	stat = true
 	summary = true
 [alias]
-	d = difftool
-	l = log --decorate --graph
+	# general
 	co = checkout
 	cmt = commit
 	st = status
 	br = branch
 	ls = ls-files
+	rst = reset
+	# merge and diff tools
 	m = mergetool
+	d = difftool
+	dc = difftool --cached
+	diffc = diff --cached
+	# log
+	l = log --decorate --graph
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	grog = log --graph --abbrev-commit --decorate --all \n--format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
 	logg = "!f() { git --no-pager log --graph --decorate $@ --color=always | env LESS='' less -R -S;}; f"
+	# special
 	commend = commit --amend --no-edit
 	shorty = status --short --branch
-	cof = checkout -p
-	diffc = diff --cached
-	dc = difftool --cached
-	rst = reset
+	# git-repo
 	lab = repo lab
 	hub = repo hub
+	# forward and backwards in a commit log
 	fwd = "!f() { git log --reverse --pretty=%H ${1:-master} | grep -A 1 $(git rev-parse HEAD) | tail -n1 | xargs git checkout;}; f"
-	ignore = "!f() { curl -L -s https://www.gitignore.io/api/$@; }; f"
 	prev = checkout HEAD~1
+	# retrieve a git ignore list from gitignore.io/api
+	ignore = "!f() { curl -L -s https://www.gitignore.io/api/$@; }; f"
 	wdiff = diff --word-diff
+	# my version for send-email which utilizes password from passwordstore
 	send-mail = "!f() { git send-email --smtp-pass=\"$(pass software/desktop/gmail-mutt)\" $@;}; f"
 [pager]
 	stash = false
