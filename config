@@ -56,7 +56,6 @@
 	ignore = "!f() { curl -L -s https://www.gitignore.io/api/$@; }; f"
 	prev = checkout HEAD~1
 	wdiff = diff --word-diff
-	diffr = diff 4b825dc642cb6eb9a060e54bf8d69288fbee4904
 	send-mail = "!f() { git send-email --smtp-pass=\"$(pass software/desktop/gmail-mutt)\" $@;}; f"
 [pager]
 	stash = false
