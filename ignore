@@ -72,3 +72,6 @@ README.html
 
 ### Ignore YouCompleteMe compile commands created by cmake and other generators ###
 compile_commands.json
+
+### Ignore cmake build directory usually found in this location
+/build/
