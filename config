@@ -167,3 +167,5 @@
 	whitespace = red reverse
 [diff-so-fancy]
 	stripLeadingSymbols = false
+[protocol]
+	version = 2
