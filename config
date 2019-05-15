@@ -74,7 +74,7 @@
 	wdiff = diff --word-diff
 	# my version for send-email which utilizes password from passwordstore
 	send-mail = "!f() { \
-		git send-email --smtp-pass=\"$(gopass show -f software/desktop/gmail-mutt)\" $@;\
+		git send-email --smtp-pass=\"$(gopass show -f software/desktop/gmail-mutt)\" ${GIT_SEND_MAIL_TO:+--to=${GIT_SEND_MAIL_TO}} $@;\
 	}; f"
 	# fzf based shortcuts kindly contributed by forgit (submodule)
 	flog = "!f() { \
