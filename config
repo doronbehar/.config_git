@@ -76,35 +76,12 @@
 	send-mail = "!f() { \
 		git send-email --smtp-pass=\"$(gopass show -f software/desktop/gmail-mutt)\" ${GIT_SEND_MAIL_TO:+--to=${GIT_SEND_MAIL_TO}} $@;\
 	}; f"
-	# fzf based shortcuts kindly contributed by forgit (submodule)
-	flog = "!f() { \
-		source ~/.config/git/forgit/forgit.plugin.sh; \
-		__forgit_log $@; \
-	}; f"
-	fadd = "!f() { \
-		source ~/.config/git/forgit/forgit.plugin.sh; \
-		__forgit_add $@; \
-	}; f"
-	fdiff = "!f() { \
-		source ~/.config/git/forgit/forgit.plugin.sh; \
-		__forgit_diff $@; \
-	}; f"
-	fignore = "!f() { \
-		source ~/.config/git/forgit/forgit.plugin.sh; \
-		__forgit_ignore $@; \
-	}; f"
-	fclean = "!f() { \
-		source ~/.config/git/forgit/forgit.plugin.sh; \
-		__forgit_clean $@; \
-	}; f"
-	frestore = "!f() { \
-		source ~/.config/git/forgit/forgit.plugin.sh; \
-		__forgit_restore $@; \
-	}; f"
-	fstash = "!f() { \
-		source ~/.config/git/forgit/forgit.plugin.sh; \
-		__forgit_stash $@; \
-	}; f"
+	# fzf based shortcuts using git-fzf (https://gitlab.com/doronbehar/git-fzf)
+	flog = fzf log
+	fadd = fzf add
+	fdiff = fzf diff
+	fclean = fzf clean
+	fstash = fzf stash
 [pager]
 	stash = false
 [push]
