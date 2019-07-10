@@ -75,3 +75,8 @@ compile_commands.json
 
 ### Ignore cmake build directory usually found in this location
 /build/
+
+### Ignore direnv nix files, if a rare project will wish them to be tracked, we'll `add -f` them
+/.direnv/
+.envrc
+shell.nix
