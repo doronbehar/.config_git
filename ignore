@@ -80,3 +80,6 @@ compile_commands.json
 /.direnv/
 .envrc
 shell.nix
+
+### Always ignore python venv
+/venv/
