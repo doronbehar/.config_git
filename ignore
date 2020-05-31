@@ -83,3 +83,6 @@ shell.nix
 
 ### Always ignore python venv
 /venv/
+
+### Ignore clangd automatically generated files.
+.clangd/
