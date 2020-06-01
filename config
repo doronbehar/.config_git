@@ -116,7 +116,6 @@
 	smtpUser = doron.behar
 	from = doron.behar@gmail.com
 	smtpServerPort = 587
-	smtpsslcertpath = "/etc/ssl/certs"
 	suppresscc = author
 [imap]
 	folder = "[Gmail]/Drafts"
