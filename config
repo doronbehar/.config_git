@@ -98,6 +98,8 @@
 [url "ssh://git@gitlab.com/"]
 	pushInsteadOf = https://gitlab.com/
 	pushInsteadOf = "gl:"
+[url "ssh://git@gitlab.gnome.org/"]
+	pushInsteadOf = https://gitlab.gnome.org/
 [url "https://bitbucket.org/"]
 	insteadOf = "bb:"
 [url "ssh://git@bitbucket.org/"]
