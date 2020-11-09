@@ -101,6 +101,8 @@
 	pushInsteadOf = "gl:"
 [url "ssh://git@gitlab.gnome.org/"]
 	pushInsteadOf = https://gitlab.gnome.org/
+[url "ssh://git@invent.kde.org/"]
+	pushInsteadOf = https://invent.kde.org/
 [url "https://bitbucket.org/"]
 	insteadOf = "bb:"
 [url "ssh://git@bitbucket.org/"]
