@@ -16,6 +16,8 @@ tags
 
 # End of https://www.gitignore.io/api/vim
 
+# Ignore python's rope files
+/.vim/.ropeproject
 tags-ja
 
 # Created by https://www.gitignore.io/api/tags
@@ -77,7 +79,7 @@ compile_commands.json
 /build/
 
 ### Ignore direnv nix files, if a rare project will wish them to be tracked, we'll `add -f` them
-/.direnv/
+.direnv/
 .envrc
 shell.nix
 
