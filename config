@@ -89,11 +89,11 @@
 	stash = false
 [push]
 	default = simple
-[url "https://github.com/"]
-	insteadOf = "gh:"
+# Sadly, I can't use https without uauthenticating as well :(, see:
+# https://docs.github.com/en/get-started/getting-started-with-git/why-is-git-always-asking-for-my-password
 [url "ssh://git@github.com/"]
-	pushInsteadOf = https://github.com/
-	pushInsteadOf = "gh:"
+	insteadOf = https://github.com/
+	insteadOf = "gh:"
 [url "https://gitlab.com/"]
 	insteadOf = "gl:"
 [url "ssh://git@gitlab.com/"]
