@@ -87,4 +87,5 @@ shell.nix
 /venv/
 
 ### Ignore clangd automatically generated files.
+.cache/clangd
 .clangd/
