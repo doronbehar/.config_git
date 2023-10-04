@@ -86,6 +86,18 @@
 	fdiff = fzf diff
 	fclean = fzf clean
 	fstash = fzf stash
+	# Based a bit upon https://stackoverflow.com/a/75826370/4935114 . In a big
+	# sh script that needs to perform such checks, the `git-sh-setup` bash
+	# script located in $GIT_EXEC_DIR has such functions
+	ffixup = "!f() {\
+		if [[ $(git status -z | cut -z -b 2 | tr -d '[:space:]\\000') ]]; then\
+			echo Will not perform fixup with changes in the worktree 1>&2;\
+			exit 2;\
+		else\
+			CMT_HASH=$(git flog);\
+			git commit --fixup=${CMT_HASH} && git rebase --autosquash ${CMT_HASH}^ "$@";\
+		fi;\
+	}; f"
 [pager]
 	stash = false
 [push]
