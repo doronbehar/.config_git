@@ -103,6 +103,8 @@
 	stash = false
 [push]
 	default = simple
+[url "ssh://git@codeberg.org/"]
+	pushInsteadOf = https://codeberg.org/
 [url "ssh://git@github.com/"]
 	pushInsteadOf = https://github.com/
 	pushInsteadOf = "gh:"
