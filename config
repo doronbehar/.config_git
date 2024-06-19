@@ -1,3 +1,6 @@
+[init]
+	# Don't be woke.
+	defaultBranch = master
 [user]
 	email = doron.behar@gmail.com
 	name = Doron Behar
