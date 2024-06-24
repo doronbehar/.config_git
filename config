@@ -154,8 +154,6 @@
 [apply]
 	ignorewhitespace = change
 	whitespace = fix
-[commit]
-	template = ~/.config/git/commit.template
 # Local configuration:
 [include]
 	path = ~/.local/share/git/config
