@@ -85,9 +85,6 @@
 	}; f"
 	# fzf based shortcuts using git-fzf (https://gitlab.com/doronbehar/git-fzf)
 	flog = fzf log
-	fadd = fzf add
-	fdiff = fzf diff
-	fclean = fzf clean
 	fstash = fzf stash
 	# Based a bit upon https://stackoverflow.com/a/75826370/4935114 . In a big
 	# sh script that needs to perform such checks, the `git-sh-setup` bash
