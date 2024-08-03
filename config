@@ -89,6 +89,9 @@
 	fco = "!f() {\
 		git checkout $(git flog); \
 	}; f"
+	frebase = "!f() {\
+		git rebase --autosquash --interactive $(git flog)^; \
+	}; f"
 	# Based a bit upon https://stackoverflow.com/a/75826370/4935114 . In a big
 	# sh script that needs to perform such checks, the `git-sh-setup` bash
 	# script located in $GIT_EXEC_DIR has such functions. This implementation
