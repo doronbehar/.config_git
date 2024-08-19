@@ -89,6 +89,9 @@
 	fco = "!f() {\
 		git checkout $(git flog); \
 	}; f"
+	fcp = "!f() {\
+		git cherry-pick $(git flog $@); \
+	}; f"
 	frebase = "!f() {\
 		git rebase --autosquash --interactive $(git flog)^; \
 	}; f"
