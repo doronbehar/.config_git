@@ -92,6 +92,7 @@
 	fcp = "!f() {\
 		git cherry-pick $(git flog $@); \
 	}; f"
+	cp = cherry-pick
 	frebase = "!f() {\
 		git rebase --autosquash --interactive $(git flog)^; \
 	}; f"
