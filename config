@@ -63,6 +63,37 @@
 	# special
 	commend = commit --amend --no-edit
 	shorty = status --short --branch
+	# ChatGPT constructed this :) It constructs a list of # <commiter>, ordered
+	# by the number of changed lines per author. The arguments are the files of
+	# interest. Without any arguments, it will work on all of the repo
+	stat-cmt = "!f() { \
+		git log \
+			--pretty=\"%ae <%an>\" \
+			-- \"$@\" \
+			| sort \
+			| uniq -c \
+			| sort -nr; \
+	}; f"
+	stat-diff = "!f() { \
+		git log \
+			--pretty=\"%ae <%an>\" \
+			--numstat \
+			-- \"$@\" \
+			| awk ' \
+				/^[0-9]/ {added+=$1; deleted+=$2} /^[^0-9]/ { \
+					if (author) { \
+						committers[author]+=added+deleted \
+					}; \
+					added=0; \
+					deleted=0; \
+					author=$0 \
+				} \
+				END { \
+					for (a in committers) print committers[a], a \
+				} \
+			' \
+			| sort -nr; \
+	}; f"
 	# git-repo
 	lab = repo lab
 	hub = repo hub
