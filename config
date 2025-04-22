@@ -39,6 +39,17 @@
 	summary = true
 	renameLimit = 4000
 [alias]
+	# https://gist.github.com/magnetikonline/dd5837d597722c9c2d5dfa16d8efe5b9?permalink_comment_id=3521618#gistcomment-3521618
+    big-files    = !"git rev-list --objects --all \
+                   | git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' \
+                   | sed -n 's/^blob //p' \
+                   | sort -nk2 \
+                   | cut -c 1-12,41- \
+                   | $(command -v gnumfmt || echo numfmt) --field=2 --to=iec-i --suffix=B --padding=7 --round=nearest"
+    big-objects = !"git rev-list --all \
+                  | parallel git ls-tree -r --long "{}" \
+                  | sort -uk3 \
+                  | sort -nk4"
 	# general
 	co = checkout
 	cp = cherry-pick
