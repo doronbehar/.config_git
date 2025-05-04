@@ -20,6 +20,13 @@
 	username = doronbehar
 [credential "https://review.jami.net/"]
 	username = doronbehar
+[credential "https://git@git.overleaf.com/"]
+	helper = "!f() { \
+		echo username=git; \
+		echo password=$( \
+			env -u PINENTRY_USER_DATA gopass show -f software/desktop/overleaf \
+		); \
+	}; f"
 [difftool "nvim-fugitive"]
 	cmd = nvim -c "Gdiff" "$MERGED"
 [difftool "nvimdiff"]
