@@ -216,3 +216,8 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+# Delta is being used only if `$GIT_PAGER == delta`.
+[delta]
+    # Sometimes when files have no syntax, these are desperately needed.
+    minus-style = "syntax #3b0000"
+    plus-style = "syntax #003800"
