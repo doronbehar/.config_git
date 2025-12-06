@@ -89,3 +89,5 @@ shell.nix
 ### Ignore clangd automatically generated files.
 .cache/clangd
 .clangd/
+
+**/.claude/settings.local.json
