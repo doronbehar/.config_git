@@ -130,7 +130,7 @@
 	wdiff = diff --word-diff
 	# my version for send-email which utilizes password from passwordstore
 	send-mail = "!f() { \
-		git send-email --smtp-pass=\"$(gopass show -f software/desktop/gmail-mutt)\" ${GIT_SEND_MAIL_TO:+--to=${GIT_SEND_MAIL_TO}} $@;\
+		git send-email --smtp-pass=\"$(secret-tool lookup user doron.behar@gmail.com)\" ${GIT_SEND_MAIL_TO:+--to=${GIT_SEND_MAIL_TO}} $@;\
 	}; f"
 [pager]
 	stash = false
