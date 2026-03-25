@@ -141,6 +141,16 @@
 [url "ssh://git@github.com/"]
 	pushInsteadOf = https://github.com/
 	pushInsteadOf = "gh:"
+[credential "https://github.com"]
+	helper = "!f() { \
+		echo username=doronbehar; \
+		echo password=$(env -u PINENTRY_USER_DATA gopass show -f api/github); \
+	}; f"
+[credential "https://gitlab.com"]
+	helper = "!f() { \
+		echo username=doronbehar; \
+		echo password=$(env -u PINENTRY_USER_DATA gopass show -f api/gitlab); \
+	}; f"
 [url "https://github.com/"]
 	insteadOf = "gh:"
 [url "https://gitlab.com/"]
