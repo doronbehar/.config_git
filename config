@@ -138,9 +138,6 @@
 	default = simple
 [url "ssh://git@codeberg.org/"]
 	pushInsteadOf = https://codeberg.org/
-[url "ssh://git@github.com/"]
-	pushInsteadOf = https://github.com/
-	pushInsteadOf = "gh:"
 [credential "https://github.com"]
 	helper = "!f() { \
 		echo username=doronbehar; \
@@ -155,9 +152,8 @@
 	insteadOf = "gh:"
 [url "https://gitlab.com/"]
 	insteadOf = "gl:"
-[url "ssh://git@gitlab.com/"]
-	pushInsteadOf = https://gitlab.com/
-	pushInsteadOf = "gl:"
+# Note that similarly to the aliases below, we define dynamically for GitHub &
+# GitLab similar aliases in ~/.shell/git
 [url "ssh://git@gitlab.gnome.org/"]
 	pushInsteadOf = https://gitlab.gnome.org/
 [url "ssh://git@invent.kde.org/"]
