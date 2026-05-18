@@ -136,8 +136,6 @@
 	stash = false
 [push]
 	default = simple
-[url "ssh://git@codeberg.org/"]
-	pushInsteadOf = https://codeberg.org/
 [credential "https://github.com"]
 	helper = "!f() { \
 		echo username=doronbehar; \
@@ -152,19 +150,8 @@
 	insteadOf = "gh:"
 [url "https://gitlab.com/"]
 	insteadOf = "gl:"
-# Note that similarly to the aliases below, we define dynamically for GitHub &
-# GitLab similar aliases in ~/.shell/git
-[url "ssh://git@gitlab.gnome.org/"]
-	pushInsteadOf = https://gitlab.gnome.org/
-[url "ssh://git@invent.kde.org/"]
-	pushInsteadOf = https://invent.kde.org/
 [url "https://bitbucket.org/"]
 	insteadOf = "bb:"
-[url "ssh://git@bitbucket.org/"]
-	pushInsteadOf = https://bitbucket.org/
-	pushInsteadOf = "bb:"
-[url "ssh://doronbehar@review.jami.net/"]
-	pushInsteadOf = https://review.jami.net/
 [status]
 	submodulesummary = true
 	showUntrackedFiles = all
@@ -187,7 +174,13 @@
 	whitespace = fix
 # Local configuration:
 [include]
+	# General path for local configuration
 	path = ~/.local/share/git/config
+	# Sometimes I'm using a network that disallows ssh entirely. Hence I
+	# include this path, which sometimes doesn't exist, as it is moved into
+	# ~/.local/share/git/dynamic-ssh.conf.disabled by a systemd user
+	# service called network-manager-ssh-disabler
+	path = ~/.local/share/git/dynamic-ssh.conf
 	# fzf based shortcuts using git-fzf (https://gitlab.com/doronbehar/git-fzf)
 	path = ~/repos/git-fzf/handy-aliases.gitconfig
 [color]
