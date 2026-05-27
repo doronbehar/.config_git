@@ -128,9 +128,36 @@
 		curl -L -s https://www.gitignore.io/api/$@;\
 	}; f"
 	wdiff = diff --word-diff
-	# my version for send-email which utilizes password from passwordstore
+	# my version for send-email which utilizes password from passwordstore,
+	# picks a parent commit via fzf, and includes a cover letter
 	send-mail = "!f() { \
-		git send-email --smtp-pass=\"$(secret-tool lookup user doron.behar@gmail.com)\" ${GIT_SEND_MAIL_TO:+--to=${GIT_SEND_MAIL_TO}} $@;\
+		local sha; \
+		sha=$(env \
+			FZF_DEFAULT_OPTS='--no-multi --header-first --header=\"Choose the parent commit of the patches to send\"' \
+			git flog \
+		); \
+		if [ -z \"$sha\" ]; then \
+			echo 'No commits selected.'; \
+			return 1; \
+		fi; \
+		local tmpdir; \
+		tmpdir=$(mktemp -d -t git-send-mail.XXXXX); \
+		trap 'rm -rf \"$tmpdir\"' EXIT INT TERM; \
+		local patches; \
+		if ! patches=$(git format-patch --cover-letter -o \"$tmpdir\" $sha); then \
+			echo 'Failed to generate patches.'; \
+			return 1; \
+		fi; \
+		if [ -z \"$patches\" ]; then \
+			echo 'No patches generated.'; \
+			return 1; \
+		fi; \
+		${VISUAL:-${EDITOR:-vi}} \"$tmpdir/0000-cover-letter.patch\"; \
+		git send-email \
+			--smtp-pass=\"$(secret-tool lookup user doron.behar@gmail.com)\" \
+			${GIT_SEND_MAIL_TO:+--to=${GIT_SEND_MAIL_TO}} \
+			$@ \
+			$patches; \
 	}; f"
 [pager]
 	stash = false
