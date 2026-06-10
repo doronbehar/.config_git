@@ -85,6 +85,9 @@ shell.nix
 
 ### Always ignore python venv
 /venv/
+/.venv/
+# MSYS2 windows relevant when working with Native Python
+/.autoenv.zsh
 
 ### Ignore clangd automatically generated files.
 .cache/clangd
