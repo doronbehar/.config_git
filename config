@@ -207,6 +207,9 @@
 	# include this path, which sometimes doesn't exist, as it is moved into
 	# ~/.local/share/git/dynamic-ssh.conf.disabled by a systemd user
 	# service called network-manager-ssh-disabler
+	#
+	# Note that we track this dile here in $XDG_CONFIG_HOME/git/, but we use
+	# symlinks (or [include] on windows where symlinks are not available).
 	path = ~/.local/share/git/dynamic-ssh.conf
 	# fzf based shortcuts using git-fzf (https://gitlab.com/doronbehar/git-fzf)
 	path = ~/repos/git-fzf/handy-aliases.gitconfig
