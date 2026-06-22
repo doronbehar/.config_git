@@ -159,6 +159,10 @@
 			$@ \
 			$patches; \
 	}; f"
+	# https://dandavison.github.io/delta/grep.html
+	grp = "!f() { \
+		rg --json \"$@\" | delta; \
+	}; f"
 [pager]
 	stash = false
 [push]
