@@ -161,7 +161,7 @@
 	}; f"
 	# https://dandavison.github.io/delta/grep.html
 	grp = "!f() { \
-		rg --json \"$@\" | delta; \
+		rg --hidden --json \"$@\" | delta; \
 	}; f"
 [pager]
 	stash = false
