@@ -177,12 +177,6 @@
 		echo username=doronbehar; \
 		echo password=$(env -u PINENTRY_USER_DATA gopass show -f api/gitlab); \
 	}; f"
-[url "https://github.com/"]
-	insteadOf = "gh:"
-[url "https://gitlab.com/"]
-	insteadOf = "gl:"
-[url "https://bitbucket.org/"]
-	insteadOf = "bb:"
 [status]
 	submodulesummary = true
 	showUntrackedFiles = all
